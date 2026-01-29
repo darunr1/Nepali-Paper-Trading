@@ -1,0 +1,53 @@
+:root {
+  --ink: #0d1412;
+  --ink-soft: #1d2623;
+  --sand: #f8f1e8;
+  --sun: #f1b87a;
+  --palm: #0f6b4b;
+  --clay: #c85a2f;
+  --mist: rgba(13, 20, 18, 0.08);
+  --card: rgba(255, 248, 240, 0.92);
+  --line: rgba(13, 20, 18, 0.12);
+  --shadow: 0 20px 60px rgba(19, 31, 26, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--ink);
+  background-color: #f4e9dc;
+  background-image:
+    radial-gradient(circle at top right, rgba(241, 184, 122, 0.35), transparent 55%),
+    radial-gradient(circle at 10% 20%, rgba(15, 107, 75, 0.18), transparent 45%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(244, 233, 220, 0.9));
+  font-family: var(--font-body), "IBM Plex Sans", "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(200, 90, 47, 0.3);
+  color: var(--ink);
+}
