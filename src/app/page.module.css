@@ -47,6 +47,10 @@
 
 .primaryButton,
 .secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   border: none;
   padding: 12px 20px;
   border-radius: 999px;
@@ -80,7 +84,7 @@
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
   display: grid;
-  gap: 12px;
+  gap: 16px;
 }
 
 .heroRow {
@@ -89,6 +93,7 @@
   align-items: center;
   font-size: 0.95rem;
   color: var(--ink-soft);
+  padding: 6px 0;
 }
 
 .heroRow strong {
@@ -143,17 +148,22 @@
   font-size: 0.92rem;
 }
 
+.table th,
+.table td {
+  padding: 12px 14px;
+}
+
 .table th {
   text-align: left;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--ink-soft);
+  padding-top: 4px;
   padding-bottom: 10px;
 }
 
 .table td {
-  padding: 12px 0;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
 }
@@ -209,7 +219,11 @@
 .summaryGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 28px;
+}
+
+.summaryGrid > div {
+  padding: 6px 0;
 }
 
 .summaryGrid span {
@@ -218,7 +232,7 @@
   color: var(--ink-soft);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .summaryGrid strong {
@@ -255,6 +269,20 @@
   padding: 24px 0;
   text-align: center;
   color: var(--ink-soft);
+}
+
+.rules {
+  scroll-margin-top: 24px;
+}
+
+.rulesList {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 @media (max-width: 720px) {

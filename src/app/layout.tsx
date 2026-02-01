@@ -14,7 +14,7 @@ const bodyFont = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Paper Desi Trade ? NEPSE Sandbox",
+  title: "Paper Desi Trade - NEPSE Sandbox",
   description:
     "A focused paper trading dashboard for Nepal stock markets (NEPSE).",
 };

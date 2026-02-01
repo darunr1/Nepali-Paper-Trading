@@ -78,6 +78,7 @@ export default function Dashboard() {
     type: "market" as "market" | "limit",
     limitPrice: "",
   });
+  const sessionLabel = market?.session;
 
   const equity = useMemo(() => {
     if (!portfolio) return 0;
@@ -135,7 +136,7 @@ export default function Dashboard() {
     <div className={styles.shell}>
       <header className={styles.hero}>
         <div>
-          <p className={styles.kicker}>Paper Desi Trade ? Nepal MVP</p>
+          <p className={styles.kicker}>Paper Desi Trade - Nepal MVP</p>
           <h1>Trade NEPSE like a pro, with zero risk.</h1>
           <p className={styles.subhead}>
             A focused paper trading sandbox for Nepal stock markets. Realistic
@@ -146,7 +147,9 @@ export default function Dashboard() {
             <button className={styles.primaryButton} onClick={refresh}>
               Refresh Market
             </button>
-            <button className={styles.secondaryButton}>View Rules</button>
+            <a className={styles.secondaryButton} href="#rules">
+              View Rules
+            </a>
           </div>
         </div>
         <div className={styles.heroCard}>
@@ -165,7 +168,9 @@ export default function Dashboard() {
           <div className={styles.heroRow}>
             <span>Market Session</span>
             <strong>
-              {market?.session ?? "--"} {market?.isOpen ? "? Open" : "? Closed"}
+              {sessionLabel ?? "--"}
+              {sessionLabel ? " - " : " "}
+              {market?.isOpen ? "Open" : "Closed"}
             </strong>
           </div>
           <div className={styles.heroMeta}>{status}</div>
@@ -240,7 +245,7 @@ export default function Dashboard() {
               >
                 {market?.stocks.map((stock) => (
                   <option key={stock.symbol} value={stock.symbol}>
-                    {stock.symbol} ? {stock.name}
+                    {stock.symbol} - {stock.name}
                   </option>
                 ))}
               </select>
@@ -418,6 +423,21 @@ export default function Dashboard() {
               </tbody>
             </table>
           </div>
+        </div>
+      </section>
+
+      <section id="rules" className={styles.rules}>
+        <div className={styles.panel}>
+          <div className={styles.panelHeader}>
+            <h2>Trading Rules</h2>
+            <p>Quick guide for paper orders in this demo.</p>
+          </div>
+          <ul className={styles.rulesList}>
+            <li>Market orders fill immediately at the last traded price.</li>
+            <li>Limit orders fill at your price when the market reaches it.</li>
+            <li>Cash must cover buys; sells are limited to available shares.</li>
+            <li>Positions and equity update after each fill.</li>
+          </ul>
         </div>
       </section>
     </div>
